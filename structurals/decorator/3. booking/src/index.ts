@@ -23,7 +23,7 @@ class DoubleRoomBooking implements IBooking {
   }
 }
 
-class ExtraBed extends BookingDecorator {
+class ExtraBedDecorator extends BookingDecorator {
   private PRICE = 30;
 
   calculatePrice(): number {
@@ -35,8 +35,8 @@ class ExtraBed extends BookingDecorator {
   }
 }
 
-class WiFi extends BookingDecorator {
-  private PRICE = 2;
+class WiFiDecorator extends BookingDecorator {
+  private PRICE = 5;
 
   calculatePrice(): number {
     return this.booking.calculatePrice() + this.PRICE;
@@ -51,3 +51,10 @@ const booking = new DoubleRoomBooking();
 console.log(booking.calculatePrice());
 console.log(booking.getDescription());
 
+const bookingWithExtraBed = new ExtraBedDecorator(booking);
+console.log(bookingWithExtraBed.calculatePrice());
+console.log(bookingWithExtraBed.getDescription());
+
+const fullBooking = new WiFiDecorator(bookingWithExtraBed);
+console.log(fullBooking.calculatePrice());
+console.log(fullBooking.getDescription());

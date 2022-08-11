@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node src/index.js",
+    "dale": "npx tsc && node src/index.js"
+  },
   "devDependencies": {
     "typescript": "^4.7.4"
   }

@@ -1,8 +1,10 @@
 {
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node src/index.js",
+    "dale": "npx tsc && node src/index.js"
+  },
   "devDependencies": {
-    "@types/jest": "^28.1.6",
-    "jest": "^28.1.3",
-    "ts-jest": "^28.0.7",
     "typescript": "^4.7.4"
   }
 }
